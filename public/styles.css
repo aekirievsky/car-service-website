@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                 url('/Images/Logojpg.jpg');
+    background-position: center center; /* Логотип по центру */
+    background-repeat: no-repeat; /* Не повторять изображение */
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    text-shadow: 4px 4px 6px rgba(255, 255, 255, 0.7);
+    font-size: 72px;
+    line-height: 1.2;
+    padding: 10px;
+}
+header {
+    background-color: rgba(51, 51, 51, 0.8); /* Полупрозрачный черный */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+nav {
+    background-color: rgba(85, 85, 85, 0.8); /* Полупрозрачный черный */
+    color: #fff;
+    padding: 15px;
+    display: flex;  /* Используем flexbox */
+    justify-content: space-between;  /* Центрируем элементы по горизонтали */
+    align-items: center;  /* Выравнивание по вертикали */
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.nav-links {
+    display: flex;  /* Элементы навигации будут располагаться в строку */
+    justify-content: center;  /* Центрируем ссылки */
+    flex-grow: 1;  /* Заставляем блок с ссылками занимать все доступное пространство */
+}
+
+.nav-buttons {
+    margin-left: auto;  /* Перемещаем контейнер кнопок на правую сторону */
+    display: flex;  /* Используем flexbox для кнопок */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.services, .contact, .map, .form {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Плавный переход для hover */
+}
+.services:hover, .contact:hover, .map:hover, .form:hover {
+    background-color: rgba(255, 255, 255, 1); /* Убираем прозрачность при наведении */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Увеличение тени */
+    transform: scale(1.02); /* Небольшое увеличение */
+}
+.form input, .form textarea, .form button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif; /* Применяем новый шрифт */
+}
+.form button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+.form button:hover {
+    background-color: #555; /* Изменение фона при наведении */
+}
+
+#alertContainer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1050; /* Чтобы уведомления были поверх других элементов */
+    max-width: 300px; /* Ограничим ширину */
+}
+
+.alert {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.7s ease, transform 0.7s ease; /* Плавное появление */
+}
+
+.alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
