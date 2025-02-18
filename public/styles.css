@@ -7,7 +7,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
     background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-                 url('/Images/Logojpg.jpg');
+                 url('Images/Logojpg.jpg');
     background-position: center center; /* Логотип по центру */
     background-repeat: no-repeat; /* Не повторять изображение */
     background-attachment: fixed;
