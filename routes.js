@@ -35,7 +35,7 @@ router.post('/register', upload.none(), async (req, res) => {
                     logger.writeLog(`Ошибка при регистрации пользователя: ${err.message}`);
                     return res.status(500).json({ error: 'Произошла ошибка при регистрации' });
                 }
-                logger.writeLog(`Новый пользователь зарегистрирован: ${user}`);
+                logger.writeLog(`Новый пользователь зарегистрирован: ${username}`);
                 return res.status(201).json({ success: true, message: 'Регистрация успешна' });
             }
         );
