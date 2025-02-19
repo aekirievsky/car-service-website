@@ -6,7 +6,6 @@ const routes = require('./routes.js');
 const session = require('express-session');
 const path = require('path');
 const db = require("./db.js");
-console.log('SESSION_SECRET:', process.env.SESSION_SECRET);
 
 app.use(express.json());  // Для обработки JSON-форматов
 app.use(express.urlencoded({ extended: true }));  // Для обработки URL-кодированных данных

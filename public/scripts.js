@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (data.user) {
         document.getElementById('buttonOut').style.display = 'block';
         document.getElementById('buttonEnter').style.display = 'none';
+        document.getElementById('profile').style.display = 'inline-block';
     } else {
         document.getElementById('buttonOut').style.display = 'none';
         document.getElementById('buttonEnter').style.display = 'block';
+        document.getElementById('profile').style.display = 'none';
     }
 });
 
@@ -50,6 +52,7 @@ document.getElementById('registerForm').addEventListener('submit', (e) => {
                 modal.hide();
                 document.getElementById('buttonEnter').style.display = 'none';
                 document.getElementById('buttonOut').style.display = 'block';
+                document.getElementById('profile').style.display = 'inline-block';
             }
         })
         .catch(error => {
@@ -89,7 +92,7 @@ document.getElementById('loginForm').addEventListener('submit', (e) => {
                 modal.hide();
                 document.getElementById('buttonEnter').style.display = 'none';
                 document.getElementById('buttonOut').style.display = 'block';
-
+                document.getElementById('profile').style.display = 'inline-block';
             }
         })
         .catch(error => {
@@ -113,7 +116,6 @@ document.getElementById('recordForm').addEventListener('submit', async function 
         formData.set('user_id', user.user.user_id); // Устанавливаем user_id
     } else {
         showNotification('Необходимо войти', 'danger');
-       // alert('Вы должны быть авторизованы для записи!');
         return;
     }
 
@@ -129,7 +131,6 @@ document.getElementById('recordForm').addEventListener('submit', async function 
 
     if (result.success) {
         showNotification('Запись успешно отправлена', 'success');
-        //alert('Запись успешно отправлена!');
         this.reset(); // Очищаем форму
     } else {
         alert('Ошибка: ' + result.error);
@@ -146,10 +147,7 @@ document.getElementById('buttonOut').addEventListener('click', () => {
 
                 document.getElementById('buttonOut').style.display = 'none';
                 document.getElementById('buttonEnter').style.display = 'block';
-
-                /*setTimeout(() => {
-                    window.location.href = '/';
-                }, 5000);*/
+                document.getElementById('profile').style.display = 'inline-block';
             } else {
                 return response.json().then(data => {
                     console.error('Ошибка при выходе:', data.error);
