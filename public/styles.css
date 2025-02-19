@@ -58,7 +58,7 @@ nav a {
     margin: auto;
     padding: 20px;
 }
-.services, .contact, .map, .form {
+.services, .contact, .map, .form, .profile {
     margin-bottom: 30px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый */
@@ -66,7 +66,7 @@ nav a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease; /* Плавный переход для hover */
 }
-.services:hover, .contact:hover, .map:hover, .form:hover {
+.services:hover, .contact:hover, .map:hover, .form:hover, .profile:hover {
     background-color: rgba(255, 255, 255, 1); /* Убираем прозрачность при наведении */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Увеличение тени */
     transform: scale(1.02); /* Небольшое увеличение */
@@ -106,4 +106,12 @@ nav a {
 .alert.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+#loadingMessage {
+    text-align: center;
+    font-size: 20px;
+    color: #555;
+    margin-top: 20px; 
+    display: none; /* Скрыть по умолчанию */
 }
