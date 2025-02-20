@@ -42,3 +42,7 @@ document.getElementById("buttonOut").addEventListener("click", async () => {
     await fetch("/logout", { method: "POST" });
     window.location.href = "../index.html";
 });
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    document.getElementById('editProfile').style.display = 'none'; //TODO In progress
+});
