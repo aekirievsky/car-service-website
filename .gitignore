@@ -23,4 +23,3 @@ coverage/
 /dist/
 
 logs/log/logs.txt
-logs/logger.js
