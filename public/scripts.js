@@ -37,6 +37,7 @@ function showNotification(message, type = 'success') {
 document.getElementById('registerForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
+    console.log('Form data being sent:', [...formData.entries()]);
     fetch('/register', {
         method: 'POST',
         body: formData,
