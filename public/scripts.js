@@ -53,6 +53,10 @@ document.getElementById('registerForm').addEventListener('submit', (e) => {
                 document.getElementById('buttonEnter').style.display = 'none';
                 document.getElementById('buttonOut').style.display = 'block';
                 document.getElementById('profile').style.display = 'inline-block';
+
+                setTimeout(() => {
+                    location.reload();
+                }, 6000)
             }
         })
         .catch(error => {
@@ -144,7 +148,6 @@ document.getElementById('buttonOut').addEventListener('click', () => {
             if (response.ok) {
                 sessionStorage.removeItem('loggedInUser');
                 showNotification('Вы успешно вышли из системы', 'success');
-
                 document.getElementById('buttonOut').style.display = 'none';
                 document.getElementById('buttonEnter').style.display = 'block';
                 document.getElementById('profile').style.display = 'inline-block';
@@ -153,6 +156,9 @@ document.getElementById('buttonOut').addEventListener('click', () => {
                     console.error('Ошибка при выходе:', data.error);
                 });
             }
+            setTimeout(() => {
+                location.reload();
+            }, 3000)
         })
         .catch(error => console.error('Ошибка при выходе:', error));
 });

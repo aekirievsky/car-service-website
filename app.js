@@ -3,9 +3,9 @@ const logger = require('./logs/logger.js');
 const express = require("express");
 const app = express();
 const routes = require('./routes.js');
+const profileRoutes = require('./profileRoutes.js');
 const session = require('express-session');
 const path = require('path');
-const db = require("./db.js");
 
 app.use(express.json());  // Для обработки JSON-форматов
 app.use(express.urlencoded({ extended: true }));  // Для обработки URL-кодированных данных
@@ -20,6 +20,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 const port = process.env.PORT || 3000;
 
+app.use('/profile', profileRoutes);
 app.use('/', routes); // Используем созданные маршруты
 
 app.get("/", function (req, res) {
