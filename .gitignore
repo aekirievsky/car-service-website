@@ -17,9 +17,6 @@ yarn-error.log
 coverage/
 
 
-.env
-
-
 /dist/
 
 logs/log/logs.txt
