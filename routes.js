@@ -15,7 +15,7 @@ router.post('/register', upload.none(), async (req, res) => {
         const role = 'user';
 
         //Проверка заполненных полей
-        if (!username, !email, !password) {
+        if (!username || !email || !password) {
             console.log(`Поля: username = ${username}, email = ${email}, password = ${password}`);
             return res.status(400).json({ error: 'Не все поля заполнены' });
         }
